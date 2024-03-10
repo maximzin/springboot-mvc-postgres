@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать операцию</title>
+</head>
+<body>
+<div>
+	<a th:href="@{/operations/{id}(id=${operation.getId()})}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<form th:method="PATCH" th:action="@{/operations/{id}(id=${operation.getId()})}" th:object="${operation}">
+    <label for="name">Введите название: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="code">Введите код: </label>
+    <input type="text" th:field="*{code}" id="code"/>
+    <div style="color:red" th:if="${#fields.hasErrors('code')}" th:errors="*{code}">Code Error</div>
+    <br/>
+    <label for="priznakCHPU">Поставьте признак ЧПУ: </label>
+    <input type="checkbox" th:field="*{priznakCHPU}" th:checked="*{priznakCHPU}" id="priznakCHPU"/>
+    <br/>
+    <input type="submit" value="Обновить"/>
+</form>
+</div>
+</body>
+</html>

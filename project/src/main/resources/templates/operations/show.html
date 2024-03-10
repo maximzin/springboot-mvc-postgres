@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<title th:text="${'Операция: ' + operation.getName()}">value</title>
+</head>
+<body>
+<div>
+	<a th:href="@{/operations}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<p th:text="${'Идентификатор: ' + operation.getId()}">VALUE</p>
+<p th:text="${'Название: ' + operation.getName()}">VALUE</p>
+<p th:text="${'Код: ' + operation.getCode()}">VALUE</p>
+<p th:text="${'Признак ЧПУ: ' + operation.getPriznakCHPU().toString()}">VALUE</p>
+<br/>
+<a th:href="@{/operations/{id}/edit(id=${operation.getId()})}">Редактировать</a>
+<br/>
+<p/>
+<br/>
+<form th:method="DELETE" th:action="@{/operations/{id}(id=${operation.getId()})}">
+    <input type="submit" value="Удалить"/>
+</form>
+</div>
+</body>
+</html>

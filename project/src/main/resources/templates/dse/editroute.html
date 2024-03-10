@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Маршрут</title>
+</head>
+<body>
+
+<div>
+	<a th:href="@{/dse/{id}(id=${dse.getId()})}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<table>
+	<thead class="thead-dark">
+		<tr>
+			<th>Номер операции</th>
+			<th>Название</th>
+			<th>Фукнция</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="routestring : ${routestrings}">
+			<td th:text="${routestring.getNumOper()}">Value</td>
+			<td th:text="${routestring.getName()}">Value</td>
+			<td><form th:method="DELETE" th:action="@{/dse/{id1}/editroute/{id2}(id1=${dse.getId()}, id2=${routestring.getId()})}">
+			    <input type="submit" value="Удалить"/>
+				</form></td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<a th:href="@{/dse/{id}/editroute/newoper(id=${dse.getId()})}">Добавить операцию</a>
+</div>
+</body>
+</html>

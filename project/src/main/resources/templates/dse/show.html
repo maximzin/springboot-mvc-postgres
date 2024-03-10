@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ДСЕ</title>
+</head>
+<body>
+<div>
+	<a th:href="@{/dse}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<p th:text="${'Идентификатор: ' + dse.getId()}">VALUE</p>
+<p th:text="${'Обозначение: ' + dse.getOboznDse()}">VALUE</p>
+<p th:text="${'Название: ' + dse.getNameDse()}">VALUE</p>
+<p th:text="${'Материал: ' + dse.getMaterial()}">VALUE</p>
+<br/>
+<a th:href="@{/dse/{id}/editdse(id=${dse.getId()})}">Редактировать ДСЕ</a>
+<br/>
+<p th:text="${'Маршрут:'}">VALUE</p>
+<div th:each="routestring : ${routestrings}">
+    <p th:text="${routestring.getNumOper() + ' ' + routestring.getName()}">user</p>
+</div>
+
+<a th:href="@{/dse/{id}/editroute(id=${dse.getId()})}">Редактировать маршрут</a>
+<p/>
+<form th:method="DELETE" th:action="@{/dse/{id}(id=${dse.getId()})}">
+    <input type="submit" value="Удалить ДСЕ"/>
+</form>
+</div>
+</body>
+</html>

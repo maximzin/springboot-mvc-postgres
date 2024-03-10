@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новая ДСЕ</title>
+</head>
+<body>
+
+<div>
+	<a th:href="@{/dse}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<form th:method="POST" th:action="@{/dse}" th:object="${dse}">
+    <label for="oboznDse">Введите обозначение: </label>
+    <input type="text" th:field="*{oboznDse}" id="oboznDse"/>
+    <div style="color:red" th:if="${#fields.hasErrors('oboznDse')}" th:errors="*{oboznDse}">Obozn Error</div>
+    <br/>
+    <label for="nameDse">Введите название: </label>
+    <input type="text" th:field="*{nameDse}" id="nameDse"/>
+    <div style="color:red" th:if="${#fields.hasErrors('nameDse')}" th:errors="*{nameDse}">Name Error</div>
+    <br/>
+    <label for="material">Введите материал: </label>
+    <input type="text" th:field="*{material}" id="material"/>
+    <div style="color:red" th:if="${#fields.hasErrors('material')}" th:errors="*{material}">Material Error</div>
+    <br/>
+    <input type="submit" value="Создать"/>  
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все ДСЕ</title>
+</head>
+<body>
+
+<div>
+	<a th:href="@{/}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center" th:each="dse : ${details}">
+    <a th:href="@{/dse/{id}(id=${dse.getId()})}"
+       th:text="${dse.getOboznDse() + ', ' + dse.getNameDse() + ', ' + dse.getMaterial()}">user</a>
+</div>
+
+<br/>
+<hr/>
+<div align="center">
+	<a  href="/dse/newdse">Создать ДСЕ</a>
+</div>
+
+	
+
+</body>
+</html>

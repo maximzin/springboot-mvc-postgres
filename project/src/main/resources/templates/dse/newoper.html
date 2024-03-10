@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление операции</title>
+</head>
+<body>
+<div>
+	<a th:href="@{/dse/{id}/editroute(id=${dse.getId()})}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center">
+<p th:text="${'Редактирование маршрута: ' + dse.getOboznDse()}"></p>
+<br/>
+<form th:method="POST" th:action="@{/dse/{id}/newoper(id=${dse.getId()})}" th:object="${routestring}">
+    <input type="hidden" th:value="${dse.getId()}" name="id_dse" id="oboznDse" readonly/>
+    <label for="operation">Выберите операцию: </label>
+    <select th:object="${operation}" th:field="*{name}" id="operation">
+    	<option th:each="operation : ${operations}" th:value="${operation.getName()}" th:text="${operation.getName()}">
+    	</option>
+    </select>
+    <br/>
+    <label for="numOper">Введите номер операции: </label>
+    <input type="text" th:field="*{numOper}" id="numOper"/>
+    <div style="color:red" th:if="${#fields.hasErrors('numOper')}" th:errors="*{numOper}">Name Error</div>
+    <br/>
+    <input type="submit" value="Создать"/>  
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все операции</title>
+</head>
+<body>
+<div>
+	<a th:href="@{/}">Вернуться назад</a>
+</div>
+<br/>
+<hr/>
+<div align="center" th:each="operation : ${operations}">
+    <a th:href="@{/operations/{id}(id=${operation.getId()})}"
+       th:text="${operation.getName()}">oper</a>
+</div>
+
+<br/>
+<hr/>
+<div align="center">
+	<a  href="/operations/new">Создать</a>
+</div>
+	
+
+</body>
+</html>
