@@ -20,8 +20,8 @@
     <input type="text" th:field="*{code}" id="code"/>
     <div style="color:red" th:if="${#fields.hasErrors('code')}" th:errors="*{code}">Code Error</div>
     <br/>
-    <label for="priznakCHPU">Поставьте признак ЧПУ: </label>
-    <input type="checkbox" th:field="*{priznakCHPU}" th:checked="*{priznakCHPU}" id="priznakCHPU"/>
+    <label for="priznakChpu">Поставьте признак ЧПУ: </label>
+    <input type="checkbox" th:field="*{priznakChpu}" th:checked="*{priznakChpu}" id="priznakChpu"/>
     <br/>
     <input type="submit" value="Создать"/>  
 </form>

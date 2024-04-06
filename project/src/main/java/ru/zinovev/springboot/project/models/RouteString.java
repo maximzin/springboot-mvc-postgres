@@ -28,9 +28,9 @@ public class RouteString {
     @Max(value = 10000, message = "Numoper should be between 10 and 10000")
 	@Column(name = "numoper")
 	private int numOper;
-	
+
 	public RouteString() {}
-	
+
 	public RouteString(int idDse, String name, int numOper) {
 		this.idDse = idDse;
 		this.name = name;
@@ -68,4 +68,5 @@ public class RouteString {
 	public void setNumOper(int numoper) {
 		this.numOper = numoper;
 	}
+
 }

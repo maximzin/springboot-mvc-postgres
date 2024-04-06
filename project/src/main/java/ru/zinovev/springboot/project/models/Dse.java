@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+
 @Entity
 @Table(name = "tdse")
 public class Dse {
@@ -36,37 +37,13 @@ public class Dse {
     @Column(name = "material")
     private String material;
 
-	public Dse() {}
+    public Dse() {}
 
     public Dse(String oboznDse, String nameDse, String material) {
         this.oboznDse = oboznDse;
         this.nameDse = nameDse;
         this.material = material;
     }
-    
-    public String getOboznDse() {
-		return oboznDse;
-	}
-
-	public void setOboznDse(String oboznDse) {
-		this.oboznDse = oboznDse;
-	}
-
-	public String getNameDse() {
-		return nameDse;
-	}
-
-	public void setNameDse(String nameDse) {
-		this.nameDse = nameDse;
-	}
-
-	public String getMaterial() {
-		return material;
-	}
-
-	public void setMaterial(String material) {
-		this.material = material;
-	}
 
     public int getId() {
         return id;
@@ -75,4 +52,30 @@ public class Dse {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getOboznDse() {
+        return oboznDse;
+    }
+
+    public void setOboznDse(String oboznDse) {
+        this.oboznDse = oboznDse;
+    }
+
+    public String getNameDse() {
+        return nameDse;
+    }
+
+    public void setNameDse(String nameDse) {
+        this.nameDse = nameDse;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+
 }

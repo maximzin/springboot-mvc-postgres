@@ -14,7 +14,7 @@
 <p th:text="${'Идентификатор: ' + operation.getId()}">VALUE</p>
 <p th:text="${'Название: ' + operation.getName()}">VALUE</p>
 <p th:text="${'Код: ' + operation.getCode()}">VALUE</p>
-<p th:text="${'Признак ЧПУ: ' + operation.getPriznakCHPU().toString()}">VALUE</p>
+<p th:text="${'Признак ЧПУ: ' + operation.getPriznakChpu().toString()}">VALUE</p>
 <br/>
 <a th:href="@{/operations/{id}/edit(id=${operation.getId()})}">Редактировать</a>
 <br/>

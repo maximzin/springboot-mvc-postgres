@@ -12,4 +12,6 @@ public class BaseController {
 	public String begin() {
 	    return "base";
 	}
+
+	js
 }

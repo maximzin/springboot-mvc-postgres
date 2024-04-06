@@ -13,6 +13,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+
 @Entity
 @Table(name = "toperations")
 public class Operation {
@@ -33,46 +34,47 @@ public class Operation {
     private int code;
 
     @Column(name = "priznakchpu")
-    private boolean priznakCHPU;
+    private boolean priznakChpu;
 
-	public Operation() {}
+    public Operation() {}
 
-    public Operation (String name, int code, boolean priznakCHPU) {
+    public Operation (String name, int code, boolean priznakChpu) {
         this.name = name;
         this.code = code;
-        this.priznakCHPU = priznakCHPU;
+        this.priznakChpu = priznakChpu;
     }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getCode() {
-		return code;
-	}
+    public int getCode() {
+        return code;
+    }
 
-	public void setCode(int code) {
-		this.code = code;
-	}
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-	public boolean getPriznakCHPU() {
-		return priznakCHPU;
-	}
+    public boolean getPriznakChpu() {
+        return priznakChpu;
+    }
 
-	public void setPriznakCHPU(boolean priznakCHPU) {
-		this.priznakCHPU = priznakCHPU;
-	}
+    public void setPriznakChpu(boolean priznakChpu) {
+        this.priznakChpu = priznakChpu;
+    }
+
 }
 
