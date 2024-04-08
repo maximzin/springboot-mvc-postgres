@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping("/")
 public class BaseController {
@@ -13,5 +15,9 @@ public class BaseController {
 	    return "base";
 	}
 
-	js
+	@GetMapping("/info")
+	public String userData(Principal principal) {
+		return principal.getName();
+	}
+
 }
